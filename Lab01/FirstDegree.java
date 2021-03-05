@@ -1,4 +1,6 @@
+package test;
 import java.util.Scanner;
+import java.lang.Math;
 public class FirstDegree
 {
 	public static String one_variables(int a, int b)
@@ -22,6 +24,13 @@ public class FirstDegree
 		}
 		return "(x, y) = (" + (double)(D1 / D) + ", " + (double)(D2 / D) + ")";
 	}
+	public static String second_degree(int a, int b, int c)
+	{
+		int delta = b * b - 4 * a * c;
+		if (delta < 0) return "No solution";
+		if (delta == 0) return "x = " + (double) (-b) / (2 * a);
+		return "(" + (double)((-b - Math.sqrt(delta)) / (2 * a)) + ", " + (double)((-b + Math.sqrt(delta)) / (2 * a)) + ")";
+	}
 	public static void main(String args[])
 	{	
 		Scanner input = new Scanner(System.in);
@@ -35,6 +44,7 @@ public class FirstDegree
 		System.out.print("Enter second equation's coefficent: ");
 		int a2 = input.nextInt(); int b2 = input.nextInt(); int c2 = input.nextInt();
 		System.out.println(two_variables(a1, b1, c1, a2, b2, c2));
+		System.out.println(second_degree(1, -2, 0));
 		input.close();
 	}
 }
