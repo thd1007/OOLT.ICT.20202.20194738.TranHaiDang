@@ -2,7 +2,7 @@ package hust.soict.globalict.aims.media;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
-public class CompactDisc extends Disc implements Playable{
+public class CompactDisc extends Disc implements Playable, Comparable<Media>{
 
 	private String artist;
 	

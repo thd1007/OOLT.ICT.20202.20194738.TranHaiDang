@@ -1,6 +1,7 @@
 package hust.soict.globalict.aims.media;
 import java.util.Scanner;
-public abstract class Media {
+
+public abstract class Media implements Comparable<Media>{
 	protected String title;
 	protected String category;
 	protected float cost;
@@ -30,6 +31,18 @@ public abstract class Media {
 	public float getCost() {
 		return cost;
 	}
+	@Override
+	public boolean equals(Object o)
+	{
+		if (o == this) return true;
+		if (!(o instanceof Media)) return false;
+		Media m = (Media) o;
+		return Integer.compare(ID, m.getID()) == 0;
+	}
+	@Override
+	public int compareTo(Media o) {
+		return this.title.compareTo(o.title);
+	}
 	public void read()
 	{
 		Scanner sc = new Scanner(System.in);
@@ -41,7 +54,6 @@ public abstract class Media {
 		this.cost = sc.nextFloat();
 		
 	}
-	
 	public void printCost(boolean Lucky)
 	{
 		if (Lucky)

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Book extends Media {
+public class Book extends Media implements Comparable<Media>{
 	
 	private List<String> authors = new ArrayList<String>();
 	public Book() {

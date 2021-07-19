@@ -2,7 +2,7 @@ package hust.soict.globalict.aims.media;
 
 import java.util.Scanner;
 
-public class DigitalVideoDisc extends Disc implements Playable{
+public class DigitalVideoDisc extends Disc implements Playable, Comparable<Media>{
 	private String director;
 	public DigitalVideoDisc(String title) {
 		super();
@@ -98,4 +98,6 @@ public class DigitalVideoDisc extends Disc implements Playable{
 		System.out.println("Playing DVD: " + this.getTitle());
 		System.out.println("DVD length: " + this.getLength());
 	}
+
+	
 }
